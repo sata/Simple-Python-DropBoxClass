@@ -1,0 +1,12 @@
+A simple DropBoxClass which currently can login, upload file and get available space on a Dropbox account
+
+Kind of what you need if you use Dropbox for instance as an backup area.
+
+Basically the upload file method is modified one from jncratons repo 'PythonDropboxUploader', though I needed
+to maintain an state for several upload operations and thought it suited me better to rewrite his code as an object instead, added with available space method. 
+
+Also I prefer to use Pythons logging class instead of regular print outs, so that also changed :-)
+
+The program uses both mechanize and BeautifulSoup, it won't work otherwise.
+
+Also the web interface of Dropbox doesn't allow files larger than 350 MB to be uploaded.
