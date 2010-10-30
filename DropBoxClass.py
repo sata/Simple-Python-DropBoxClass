@@ -103,7 +103,7 @@ class DropBoxClass:
 
         Assumption: The bar presents information as: "28,5% used (583.3MB/GB of 2GB)",
         
-        returns value in MB
+        returns value in MB.
         """
         self._br.open(self.accountPath)
         soup = BeautifulSoup(self._br.response().read())
