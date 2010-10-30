@@ -22,6 +22,7 @@ class DropBoxClass:
         self._username = username
         self._password = password
         self._br = self.__login()
+        log.info("initiating DropBoxClass")
 
     def __login(self):
         """ returns an initialized mechanize browser 
@@ -94,7 +95,7 @@ class DropBoxClass:
     
     def _parseStorageSize(self, s):
         """ returnes the total space in MB"""
-        return (float(s[s.find("of")+2:s.find("GB")]))*1024
+        return (float(s[s.find("of")+2:s.find("GB")]))*1000
     
     def getFreeSpace(self):
         """ returns an estimate of  free space on DropBox by calculating from the usage bar from account page
@@ -115,7 +116,6 @@ class DropBoxClass:
         
         #parse out the string
         s = element.string
-        
         usage = self._parseUsage(s)
         storage = self._parseStorageSize(s)
         if usage != None:
